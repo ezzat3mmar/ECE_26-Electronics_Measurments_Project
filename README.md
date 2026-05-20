@@ -67,8 +67,8 @@ To achieve reliable closed-loop control alongside a responsive UI, the code avoi
 ##  Documentation
 Detailed technical documentation and project reports can be found in the `Docs` folder:
 
-*    [Project documentation (PDF)](./Docs/Digitally Controlled Buck Converter Docs.pdf)
-*    [project presentation (PDF)](./Docs/Digitally Controlled Buck Converter presentation.pdf)
+*    [Project documentation (PDF)](./Docs/DigitallyControlledBuckConverterDocs.pdf)
+*    [project presentation (PDF)](./Docs/DigitallyControlledBuckConverterpresentation.pdf)
 
 ---
 
