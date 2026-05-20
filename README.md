@@ -70,6 +70,7 @@ Detailed technical documentation and project reports can be found in the `Docs` 
 *    [project presentation (PDF)](./Docs/Digitally Controlled Buck Converter presentation.pdf)
 
 ---
+```
 ##  Hardware Components
 
 | Component Group | Part Number / Model | Functional Role inside the Circuit | Key Engineering Specifications |
