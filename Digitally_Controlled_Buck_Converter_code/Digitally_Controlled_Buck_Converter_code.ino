@@ -20,32 +20,24 @@ float actualVoltage = 0.0;
 const float sourceVoltage = 11.8; 
 const float refVoltage = 1.107;    
 const float dividerRatio = 0.083454; 
-
-
 const float calFactor = .935; 
-
-
 float errorIntegral = 0.0;
 
 unsigned long lastDisplayUpdate = 0;
 unsigned long lastControlUpdate = 0;
-
+// Initializes hardware pins, PWM timer, reference voltage, and OLED display
 void setup() {
-
   analogReference(INTERNAL); 
-  
-  pinMode(pwmPin, OUTPUT);
-
+    pinMode(pwmPin, OUTPUT);
   TCCR1B = (TCCR1B & 0b11111000) | 0x01; 
-
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     for(;;); 
   }
   display.clearDisplay();
 }
 
+// Continuously checks encoder input and handles timed execution loops for PID (60ms) and UI (300ms)
 void loop() {
-
   long newPosition = myEnc.read() / 4;
   if (newPosition != oldPosition) {
     targetVoltage += (newPosition - oldPosition) * 0.1; 
@@ -53,52 +45,39 @@ void loop() {
     oldPosition = newPosition;
   }
 
-
   if (millis() - lastControlUpdate > 60) {
     readAndAdjust();
     lastControlUpdate = millis();
   }
 
-  // 3. تحديث الشاشة كل 300 مللي ثانية
   if (millis() - lastDisplayUpdate > 300) {
     updateDisplay();
     lastDisplayUpdate = millis();
   }
 }
 
-
+// Oversamples analog input, calculates actual voltage, and computes the new PID duty cycle.
 void readAndAdjust() {
-
   long sum = 0;
   for(int i = 0; i < 150; i++) {
     sum += analogRead(feedbackPin);
   }
   float avgRaw = sum / 150.0;
 
-
   float vDrain = (avgRaw * refVoltage / 1023.0) / dividerRatio;
-  
-
   actualVoltage = (sourceVoltage - vDrain) * calFactor;
   
   if (actualVoltage < 0) actualVoltage = 0;
 
-
   float error = targetVoltage - actualVoltage;
-
-
   float Kp = 5.0; 
   float Ki = 0.1;  
 
-
   if (abs(error) > 0.05) { 
-
     errorIntegral += error;
     errorIntegral = constrain(errorIntegral, -50.0, 50.0);
 
-
     float pidOutput = (Kp * error) + (Ki * errorIntegral);
-
     int step = round(pidOutput);
     if (step == 0 && error > 0) step = 1;
     if (step == 0 && error < 0) step = -1;
@@ -108,16 +87,13 @@ void readAndAdjust() {
     errorIntegral = 0.0; 
   }
 
-
   currentPWM = constrain(currentPWM, 0, 255);
-  
-
   if (targetVoltage < 0.1) currentPWM = 0;
-  
+ 
   analogWrite(pwmPin, currentPWM);
 }
 
-
+// Wipes screen buffer, formats text parameters, and pushes target vs actual data to display.
 void updateDisplay() {
   display.clearDisplay();
   display.setTextColor(SSD1306_WHITE);
