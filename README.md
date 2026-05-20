@@ -62,14 +62,13 @@ To achieve reliable closed-loop control alongside a responsive UI, the code avoi
  │                               Adjust Timer1 31.25 kHz Duty Cycle. 
  │
  └──> [Every 300 ms] ─────────> Refresh Frame Buffer & Redraw SSD1306 OLED Display.
-```
 ---
 ##  Documentation
 Detailed technical documentation and project reports can be found in the `Docs` folder:
 
 *    [Project documentation (PDF)](./Docs/Digitally Controlled Buck Converter Docs.pdf)
 *    [project presentation (PDF)](./Docs/Digitally Controlled Buck Converter presentation.pdf)
-```
+
 ---
 ##  Hardware Components
 
