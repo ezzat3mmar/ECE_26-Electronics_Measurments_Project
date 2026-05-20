@@ -64,6 +64,14 @@ To achieve reliable closed-loop control alongside a responsive UI, the code avoi
  └──> [Every 300 ms] ─────────> Refresh Frame Buffer & Redraw SSD1306 OLED Display.
 ```
 ---
+##  Documentation
+Detailed technical documentation and project reports can be found in the `Docs` folder:
+
+*    [Project documentation (PDF)](./Docs/DigitallyControlledBuckConverterDocs.pdf)
+*    [project presentation (PDF)](./Docs/DigitallyControlledBuckConverterpresentation.pdf)
+
+---
+
 ##  Hardware Components
 
 | Component Group | Part Number / Model | Functional Role inside the Circuit | Key Engineering Specifications |
