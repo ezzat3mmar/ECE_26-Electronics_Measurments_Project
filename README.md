@@ -46,6 +46,7 @@ The project features a clear separation between the high-current **Power Stage**
 ```
 ---
 ## Project Schimatic 
+![Circuit diagram](photos/ProjectSchematic.png)
 
 ---
 ##  Firmware Task Execution Strategy
