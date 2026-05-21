@@ -3,17 +3,24 @@
 An advanced undergraduate capstone project for the **Electronics Measurement** course (3rd Year, Electronics & Communications Engineering, Tanta University). This project replaces traditional analog compensation networks with a fully digital, firmware-based Proportional-Integral (PI) control system running on an Arduino Nano (ATmega328P).
 
 ---
+##  Table of Contents
+* [Comprehensive System Overview](#comprehensive-system-overview)
+* [System Architecture](#system-architecture)
+* [Project Schematic](#project-schematic)
+* [Firmware Task Execution Strategy](#firmware-task-execution-strategy)
+* [Documentation](#documentation)
+* [Hardware Components](#hardware-components)
+* [Required Firmware Libraries](#required-firmware-libraries)
+* [Technical Specifications & Operational Profiles](#technical-specifications--operational-profiles)
+---
 
-##  Comprehensive System Overview
-
+## Comprehensive System Overview
 The core objective of this project is to implement a digitally controlled buck converter operating in Continuous Conduction Mode (CCM). Traditional buck converters rely on dedicated analog PWM controller ICs or complex op-amp error amplifiers. This system shifts that entire control loop into software. 
 
 The microcontroller samples the fluctuating output voltage, passes the error signal through a discrete Proportional-Integral (PI) algorithm, and dynamically updates the hardware duty cycle to maintain a steady target voltage despite variations in load resistance or input supply voltage.
 
 ---
-
-##  System Architecture
-
+## System Architecture
 The project features a clear separation between the high-current **Power Stage** and the interrupt-driven **Digital Control Path**. Below is the system dataflow and topology mapping:
 
 ```text
@@ -45,11 +52,11 @@ The project features a clear separation between the high-current **Power Stage**
                                               [ADC A3]
 ```
 ---
-## Project Schimatic 
+## Project Schematic 
 ![Circuit diagram](photos/ProjectSchematic.png)
 
 ---
-##  Firmware Task Execution Strategy
+## Firmware Task Execution Strategy
 
 To achieve reliable closed-loop control alongside a responsive UI, the code avoids blocking operations (`delay()`) entirely. Instead, it utilizes a cooperative multitasking scheduler structure:
 
@@ -68,7 +75,7 @@ To achieve reliable closed-loop control alongside a responsive UI, the code avoi
  └──> [Every 300 ms] ─────────> Refresh Frame Buffer & Redraw SSD1306 OLED Display.
 ```
 ---
-##  Documentation
+## Documentation
 Detailed technical documentation and project reports can be found in the `Docs` folder:
 
 *    [Project documentation (PDF)](./Docs/Digitally_Controlled_Buck_Converter_Docs.pdf)
@@ -76,7 +83,7 @@ Detailed technical documentation and project reports can be found in the `Docs` 
 
 ---
 
-##  Hardware Components
+## Hardware Components
 
 | Component Group | Part Number / Model | Functional Role inside the Circuit | Key Engineering Specifications |
 | :--- | :--- | :--- | :--- |
@@ -90,7 +97,7 @@ Detailed technical documentation and project reports can be found in the `Docs` 
 
 ---
 
-##  Required Firmware Libraries
+## Required Firmware Libraries
 
 | Library Name | Official Inclusion Tag | Main Application & Dependency |
 | :--- | :--- | :--- |
@@ -101,7 +108,7 @@ Detailed technical documentation and project reports can be found in the `Docs` 
 
 ---
 
-##  Technical Specifications & Operational Profiles
+## Technical Specifications & Operational Profiles
 
 | Technical Feature | Operational Value | Engineering Rationale & Implementation Details |
 | :--- | :--- | :--- |
