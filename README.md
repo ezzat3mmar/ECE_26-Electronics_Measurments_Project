@@ -45,6 +45,9 @@ The project features a clear separation between the high-current **Power Stage**
                                               [ADC A3]
 ```
 ---
+## Project Schimatic 
+![Circuit diagram](photos/circuit image.png)
+---
 ##  Firmware Task Execution Strategy
 
 To achieve reliable closed-loop control alongside a responsive UI, the code avoids blocking operations (`delay()`) entirely. Instead, it utilizes a cooperative multitasking scheduler structure:
