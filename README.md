@@ -12,6 +12,7 @@ An advanced undergraduate capstone project for the **Electronics Measurement** c
 * [Hardware Components](#hardware-components)
 * [Required Firmware Libraries](#required-firmware-libraries)
 * [Technical Specifications & Operational Profiles](#technical-specifications--operational-profiles)
+* [Installation](quick-installation)
 ---
 
 ## Comprehensive System Overview
@@ -120,5 +121,12 @@ Detailed technical documentation and project reports can be found in the `Docs` 
 | **Low-Side Math Strategy** | Differential Sensing | Resolves the "floating ground" issue introduced by low-side switching. Calculates final load voltage dynamically: $V_{Load} = V_{Source} - V_{Drain}$. |
 
 ---
+##  Quick Installation
 
+Copy and paste the following command to install all dependencies at once:
 
+**Clone the repository:**
+```
+   git clone https://github.com/ezzat3mmar/ECE_26-Electronics_Measurments_Project.git
+```
+---
