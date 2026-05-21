@@ -45,6 +45,9 @@ The project features a clear separation between the high-current **Power Stage**
                                               [ADC A3]
 ```
 ---
+## Project Schimatic 
+![Circuit diagram](photos/circuit image.png)
+---
 ##  Firmware Task Execution Strategy
 
 To achieve reliable closed-loop control alongside a responsive UI, the code avoids blocking operations (`delay()`) entirely. Instead, it utilizes a cooperative multitasking scheduler structure:
@@ -67,8 +70,8 @@ To achieve reliable closed-loop control alongside a responsive UI, the code avoi
 ##  Documentation
 Detailed technical documentation and project reports can be found in the `Docs` folder:
 
-*    [Project documentation (PDF)](./Docs/DigitallyControlledBuckConverterDocs.pdf)
-*    [project presentation (PDF)](./Docs/DigitallyControlledBuckConverterpresentation.pdf)
+*    [Project documentation (PDF)](./Docs/Digitally_Controlled_Buck_Converter_Docs.pdf)
+*    [project presentation (PDF)](./Docs/Digitally_Controlled_Buck_Converter_presentation.pdf)
 
 ---
 
