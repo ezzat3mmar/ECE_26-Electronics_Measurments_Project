@@ -121,7 +121,7 @@ Detailed technical documentation and project reports can be found in the `Docs` 
 | **Low-Side Math Strategy** | Differential Sensing | Resolves the "floating ground" issue introduced by low-side switching. Calculates final load voltage dynamically: $V_{Load} = V_{Source} - V_{Drain}$. |
 
 ---
-##  Quick Installation
+## Quick Installation
 
 Copy and paste the following command to install all dependencies at once:
 
