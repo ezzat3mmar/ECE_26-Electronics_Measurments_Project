@@ -129,6 +129,9 @@ Copy and paste the following command to install all dependencies at once:
 **Clone the repository:**
 ```
    git clone https://github.com/ezzat3mmar/ECE_26-Electronics_Measurments_Project.git
-
+```
+**Navigate into the project directory:**
+```
+   cd ECE_26-Electronics_Measurments_Project
 ```
 ---
