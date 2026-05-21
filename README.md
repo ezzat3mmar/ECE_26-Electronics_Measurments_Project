@@ -12,7 +12,7 @@ An advanced undergraduate capstone project for the **Electronics Measurement** c
 * [Hardware Components](#hardware-components)
 * [Required Firmware Libraries](#required-firmware-libraries)
 * [Technical Specifications & Operational Profiles](#technical-specifications--operational-profiles)
-* [Installation](quick-installation)
+* [Installation](#quick-installation)
 ---
 
 ## Comprehensive System Overview
